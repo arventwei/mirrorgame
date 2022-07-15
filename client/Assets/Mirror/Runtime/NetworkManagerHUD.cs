@@ -1,5 +1,6 @@
 // vis2k: GUILayout instead of spacey += ...; removed Update hotkeys to avoid
 // confusion if someone accidentally presses one.
+using System.Collections;
 using UnityEngine;
 
 namespace Mirror
@@ -19,9 +20,25 @@ namespace Mirror
         void Awake()
         {
             manager = GetComponent<NetworkManager>();
+          
         }
 
-        void OnGUI()
+		void Start()
+		{
+            // Debug.Log($"{manager.name}");
+            string[] args = System.Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].ToLower() == "-server")
+                {
+                    //yield return null;
+                    manager.StartServer();
+                }
+            }
+        }
+
+
+		void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10 + offsetX, 40 + offsetY, 215, 9999));
             if (!NetworkClient.isConnected && !NetworkServer.active)

@@ -187,7 +187,7 @@ namespace Mirror
             // Don't allow collision-destroyed second instance to continue.
             if (!InitializeSingleton()) return;
 
-            Debug.Log("Mirror | mirror-networking.com | discord.gg/N9QVxbM");
+           // Debug.Log("Mirror | mirror-networking.com | discord.gg/N9QVxbM");
 
             // Set the networkSceneName to prevent a scene reload
             // if client connection to server fails.
@@ -276,6 +276,8 @@ namespace Mirror
             }
 
             mode = NetworkManagerMode.ServerOnly;
+
+            Debug.Log($"[mirror]StartServer");
 
             // StartServer is inherently ASYNCHRONOUS (=doesn't finish immediately)
             //
@@ -677,7 +679,7 @@ namespace Mirror
                 //Debug.Log("NetworkManager created singleton (ForScene)");
                 singleton = this;
             }
-
+            // Debug.Log($"activeTransport Init{transport}");
             // set active transport AFTER setting singleton.
             // so only if we didn't destroy ourselves.
             Transport.activeTransport = transport;
