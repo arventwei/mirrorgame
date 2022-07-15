@@ -23,19 +23,19 @@ namespace Mirror
           
         }
 
-		void Start()
-		{
-            // Debug.Log($"{manager.name}");
-            string[] args = System.Environment.GetCommandLineArgs();
-            for (int i = 0; i < args.Length; i++)
-            {
-                if (args[i].ToLower() == "-server")
-                {
-                    //yield return null;
-                    manager.StartServer();
-                }
-            }
-        }
+		//void Start()
+		//{
+  //          // Debug.Log($"{manager.name}");
+  //          string[] args = System.Environment.GetCommandLineArgs();
+  //          for (int i = 0; i < args.Length; i++)
+  //          {
+  //              if (args[i].ToLower() == "-server")
+  //              {
+  //                  //yield return null;
+  //                  manager.StartServer();
+  //              }
+  //          }
+  //      }
 
 
 		void OnGUI()

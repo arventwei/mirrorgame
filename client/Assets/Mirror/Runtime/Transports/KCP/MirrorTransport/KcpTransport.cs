@@ -83,6 +83,7 @@ namespace kcp2k
 #if ENABLE_IL2CPP
             // NonAlloc doesn't work with IL2CPP builds
             NonAlloc = false;
+            Debug.Log("KcpTransport NonAlloc!");
 #endif
 
             // client
